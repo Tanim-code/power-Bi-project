@@ -1,13 +1,21 @@
 ### **Dataset Details Information:**
 
- **InvoiceNo**: A 6-digit integral number uniquely assigned to each 
+ **InvoiceNo**: A 6-digit integral number uniquely assigned to each.
+ 
 transaction. If the code starts with the letter 'c', it indicates a cancellation.
+
  **StockCode**: A 5-digit integral number uniquely assigned to each distinct product.
+ 
 **Description**: The name of the product/item.
+
 **Quantity**: The quantity of each product/item per transaction (numeric).
+
 **InvoiceDate**: The date and time when each transaction was generated.
+
 **UnitPrice**: The unit price of the product, in sterling.
+
 **CustomerID**: A 5-digit integral number uniquely assigned to each customer.
+
 **Country**: The name of the country where each customer resides.
 
 ### **Data Preprocessing steps:**
@@ -253,7 +261,7 @@ There are lot o Measure Uses for individual calculation
 11.    ```
              validation = 
 	      [New Customar]+[Retaind Customer]+[Recovered Customers]
-```
+
 
 ###**DashBoard And Visualization**
 
