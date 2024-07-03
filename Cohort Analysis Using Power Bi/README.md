@@ -265,14 +265,14 @@ There are lot o Measure Uses for individual calculation
 
 ###**DashBoard And Visualization**
 
-Monthly cohort Based New customer and Churned Customer Analysis:
+ - monthly cohort Based New customer and Churned Customer Analysis:
 
 <img width="649" alt="1 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/0bb39d09-97b3-4733-9ede-d152880b54d9">
 
-- Churned Customer Trend Analysis:                                                                                         <img width="658" alt="2 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/1336fed6-a758-4570-962b-c7f0cee50c8e">   
+- Churned Customer Trend Analysis:                                                                                         <img width="649" alt="2 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/1336fed6-a758-4570-962b-c7f0cee50c8e">   
                               
--Lost customer and Recoverd Customer analysis
-<img width="652" alt="3 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/011f25a4-0926-4afe-bd74-7bb597ddab69">
+- Lost customer and Recoverd Customer analysis
+<img width="649" alt="3 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/011f25a4-0926-4afe-bd74-7bb597ddab69">
 
 
 
