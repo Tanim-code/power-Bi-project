@@ -263,7 +263,7 @@ There are lot of Measures Uses for individual calculation
 	      [New Customar]+[Retaind Customer]+[Recovered Customers]
 
 
-###**DashBoard And Visualization**
+### **DashBoard And Visualization**
 
  - monthly cohort Based New customer and Churned Customer Analysis:
 
