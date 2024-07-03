@@ -275,4 +275,8 @@ There are lot o Measure Uses for individual calculation
 <img width="649" alt="3 cohort" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/011f25a4-0926-4afe-bd74-7bb597ddab69">
 
 
+###Project Impact:
+The project equips stakeholders with actionable insights Derived from cohort analysis, enabling data-driven decision-making to enhance customer retention, optimize marketing strategies, and maximize revenue generation.
+
+
 
