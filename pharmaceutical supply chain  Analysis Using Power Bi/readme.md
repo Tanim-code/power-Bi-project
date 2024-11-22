@@ -1,17 +1,17 @@
 Pharmaceutical Supply Chain Management:
 
 **Dataset Details:**
-- 10 tables present in dataset 
-1.Brands
-2.Calender
-3.Categories
-4.Customers
-5.Customers_Type 
-6.Products 
-7.Sales_person 
-8.Sales_team 
-9.OrdersItem
-10.Orders
+- 10 tables present in the dataset 
+1. Brands
+2. Calender
+3. Categories
+4. Customers
+5. Customers_Type 
+6. Products 
+7. Sales_person 
+8. Sales_team 
+9. OrdersItem
+10. Orders
 
 
 
@@ -105,7 +105,7 @@ RETURN
 
 11. OTIF% = DIVIDE([OTIF value],[Total Order Lines])
 12.Total Order Line QTY = SUM(factOrders[Total Order Amount])
-13. Total Order Lines = COUNTROWS(factOrders)
+13. Total Order Lines = COUNTROWS(factors)
 
 14. Total Order Lines Fully Filled = COUNTX(
     factOrders,
@@ -129,10 +129,11 @@ RETURN
 
 ### **DashBoard And Visualization:**
 
-- Revenue, Total Order, Return Rate, Profit. 
-- Revenue prediction.
-- Revenue, profit, order comparison By previous Month.
-- Most Order product and Most profit product findings.
+## *Orders at a glance 
+- Location Based Order Analysis 
+- Product-based order analysis 
+- Top distributor Order analysis 
+-  ‘On-time delivery (OT) %’, ‘In-full delivery (IF) %’, and OnTime in full (OTIF) %’ of the customer orders daily basis against the target service level set for each customer.
    <img width="741" alt="2 Adventureworks" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/0e9208db-d54c-44db-ba6f-ce700f56cf7c">
 
 - Total order By country.
