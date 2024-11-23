@@ -179,8 +179,11 @@ RETURN
 
 ## **Project Impact:**
 -Improved Decision-Making: By visualizing regional and individual performance, stakeholders can address inefficiencies, allocate resources more effectively, and target high-priority issues.
+
 -Enhanced Customer Satisfaction: Monitoring OTIF% ensures timely and complete delivery of orders, reducing customer dissatisfaction and improving reliability.
--Supply Chain Optimization: Continuous tracking of order lines, fulfillment rates, and delivery performance provides a clear view of the operational bottlenecks, enabling informed adjustments to processes.
+
+-Supply Chain Optimization: Continuous tracking of order lines, fulfillment rates, and delivery performance provides a clear view of the operational bottlenecks, enabling informed process adjustments.
+
 -Cost Savings: Identifying inefficiencies (e.g., low LIFR or VoFR) enables pharmaceutical companies to streamline operations, reducing excess inventory and logistics costs.
 
 
