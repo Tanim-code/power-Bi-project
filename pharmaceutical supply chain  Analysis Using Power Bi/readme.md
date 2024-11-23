@@ -129,7 +129,7 @@ RETURN
 
 ### **DashBoard And Visualization:**
 
-## *Orders at a glance*
+## *Orders at a glance:*
 - Location Based Order Analysis 
 - Product-based order analysis 
 - Top distributor Order analysis 
@@ -138,26 +138,50 @@ RETURN
  <img width="286" alt="1 ph" src="https://github.com/user-attachments/assets/ced5a200-9bc1-4f6b-b9c5-145e0184799a">
 
 
-## *Service level analysis*
-- Total order By country.
-- Total Order by Continent.
+## *Service level analysis:*
+
+- ‘On-time delivery (OT) %’, ‘In-full delivery (IF) %’, and OnTime in full (OTIF) %’ Service analysis by Sales person
+
+<img width="572" alt="2 ph" src="https://github.com/user-attachments/assets/920ab8b7-8f93-4b7d-9d37-5d34114757aa">
 
 
 
-**Product Details:**
-- Adjusted Price.
-- different trends of product product, revenue, return rate, return quantity.
-- Monthly Order, revenue, profit VS Target.
-  <img width="740" alt="4 Adventureworks" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/c87d2abe-1233-4e1a-a742-704c44c57c2f">
 
-**Customer details:**
-- Top 50 customer performance.
-- Top customer Highest Revenue.
-- Comparison Trend Total customer and Average revenue per customer.
- <img width="743" alt="5 Advantureworks" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/ea4f76fb-9cfc-4cb1-8154-3ca38eec6ad5">
+**Order lines at a glance:**
+
+- Total Order Quantity 
+- Order analysis in Person analysis 
+
+ <img width="577" alt="3 pha" src="https://github.com/user-attachments/assets/afe212a4-6105-4dc9-b255-3ce2029e6cc8">
+
+
+**Key Metrics:**
+
+- On-time product analysis.
+- IF%, OTIF%, LIFR%, VoFR% analysis by Product type.
+- Trend Analysis.
+
+<img width="572" alt="4 ph" src="https://github.com/user-attachments/assets/00c877ee-cf66-4b62-b7ef-b7f039197d97">
+
+**Lead Time Analysis:**
+
+ - Delivery Delay analysis by Product based analysis.
+
+<img width="582" alt="5 ph" src="https://github.com/user-attachments/assets/02ab1cd1-a9a2-47ad-b57a-351fbb0feaf8">
+
+**products at glance:**
+
+- Product trends analysis LIFR%.
+- Product trends analysis by VoFR%.
+
+<img width="578" alt="6 ph" src="https://github.com/user-attachments/assets/e919e8bb-5a26-4396-835f-9687f5c22bf3">
+
 
 ## **Project Impact:**
-This project focused on analyzing Adventure Works' data from 2020 to 2022. The primary objective was to derive actionable insights that stakeholders can utilize to make informed, data-driven decisions aimed at enhancing and optimizing marketing strategies, as well as maximizing revenue generation.
+-Improved Decision-Making: By visualizing regional and individual performance, stakeholders can address inefficiencies, allocate resources more effectively, and target high-priority issues.
+-Enhanced Customer Satisfaction: Monitoring OTIF% ensures timely and complete delivery of orders, reducing customer dissatisfaction and improving reliability.
+-Supply Chain Optimization: Continuous tracking of order lines, fulfillment rates, and delivery performance provides a clear view of the operational bottlenecks, enabling informed adjustments to processes.
+-Cost Savings: Identifying inefficiencies (e.g., low LIFR or VoFR) enables pharmaceutical companies to streamline operations, reducing excess inventory and logistics costs.
 
 
 
