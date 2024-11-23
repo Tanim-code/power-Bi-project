@@ -135,13 +135,13 @@ RETURN
 - Top distributor Order analysis 
 -  ‘On-time delivery (OT) %’, ‘In-full delivery (IF) %’, and OnTime in full (OTIF) %’ of the customer orders daily basis against the target service level set for each customer.
 
-   <img width="741" alt="2 Adventureworks" src="https://github.com/Tanim-code/power-Bi-project/assets/86589317/0e9208db-d54c-44db-ba6f-ce700f56cf7c">
+ <img width="286" alt="1 ph" src="https://github.com/user-attachments/assets/ced5a200-9bc1-4f6b-b9c5-145e0184799a">
 
 
 ## *Service level analysis*
 - Total order By country.
 - Total Order by Continent.
-<img width="286" alt="1 ph" src="https://github.com/user-attachments/assets/ced5a200-9bc1-4f6b-b9c5-145e0184799a">
+
 
 
 **Product Details:**
