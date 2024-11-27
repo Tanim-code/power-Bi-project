@@ -178,6 +178,11 @@ TOTALMTD(CALCULATE([Total Orders],'Calendar Table'[Month]=Select_month),'Calenda
 
  <img width="671" alt="image" src="https://github.com/user-attachments/assets/3903ffeb-aa8b-4076-bab1-0f1a6aec36c0">
 
+# Hover any chart see a tooltip details:
+
+![image](https://github.com/user-attachments/assets/2083112a-fdc4-432a-b359-2c978e5c7f6b)
+
+
 
 
 ## *Service level analysis:*
