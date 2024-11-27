@@ -176,7 +176,8 @@ TOTALMTD(CALCULATE([Total Orders],'Calendar Table'[Month]=Select_month),'Calenda
 - Location-wise analysis.
 - previous and current month sales, Orders analysis.
 
- <img width="671" alt="image" src="https://github.com/user-attachments/assets/3903ffeb-aa8b-4076-bab1-0f1a6aec36c0">
+![image](https://github.com/user-attachments/assets/2d6415a3-cbb1-4b79-907e-53435631ef2c)
+
 
 # Hover any chart see a tooltip details:
 
@@ -185,53 +186,38 @@ TOTALMTD(CALCULATE([Total Orders],'Calendar Table'[Month]=Select_month),'Calenda
 
 
 
-## *Service level analysis:*
+## *Customer Purchase Patterns:*
 
-- ‘On-time delivery (OT) %’, ‘In-full delivery (IF) %’, and OnTime in full (OTIF) %’ Service analysis by Sales person
+- Specific analysis by Sales, Orders, and Sold quantity.
+- Total sales, and orders Analysis by day. 
+- Sales analysis by Hour of Day. 
+- Sales by product types and product category. 
 
-<img width="572" alt="2 ph" src="https://github.com/user-attachments/assets/920ab8b7-8f93-4b7d-9d37-5d34114757aa">
+![image](https://github.com/user-attachments/assets/035a2f8f-5aff-4828-843d-dfb9e6111c81)
 
+# Hover any chart see a tooltip details:
 
-
-
-**Order lines at a glance:**
-
-- Total Order Quantity 
-- Order analysis in Person analysis 
-
- <img width="577" alt="3 pha" src="https://github.com/user-attachments/assets/afe212a4-6105-4dc9-b255-3ce2029e6cc8">
+![image](https://github.com/user-attachments/assets/bd0145be-ade8-4274-aa0c-beb7a1da7ec1)
 
 
-**Key Metrics:**
 
-- On-time product analysis.
-- IF%, OTIF%, LIFR%, VoFR% analysis by Product type.
-- Trend Analysis.
+**Product at a glance:**
 
-<img width="572" alt="4 ph" src="https://github.com/user-attachments/assets/00c877ee-cf66-4b62-b7ef-b7f039197d97">
+- Product type and Categories Growth analysis.
+- Top sales location and Top product Findings.
 
-**Lead Time Analysis:**
+![image](https://github.com/user-attachments/assets/a7de304e-d309-4e47-9212-be589c43ae20)
 
- - Delivery Delay analysis by Product based analysis.
 
-<img width="582" alt="5 ph" src="https://github.com/user-attachments/assets/02ab1cd1-a9a2-47ad-b57a-351fbb0feaf8">
 
-**products at glance:**
+**Story Telling:**
 
-- Product trends analysis LIFR%.
-- Product trends analysis by VoFR%.
+![image](https://github.com/user-attachments/assets/93823080-847f-41bf-b4e6-f36ab078e0a6)
 
-<img width="578" alt="6 ph" src="https://github.com/user-attachments/assets/e919e8bb-5a26-4396-835f-9687f5c22bf3">
 
 
 ## **Project Impact:**
--Improved Decision-Making: By visualizing regional and individual performance, stakeholders can address inefficiencies, allocate resources more effectively, and target high-priority issues.
-
--Enhanced Customer Satisfaction: Monitoring OTIF% ensures timely and complete delivery of orders, reducing customer dissatisfaction and improving reliability.
-
--Supply Chain Optimization: Continuous tracking of order lines, fulfillment rates, and delivery performance provides a clear view of the operational bottlenecks, enabling informed process adjustments.
-
--Cost Savings: Identifying inefficiencies (e.g., low LIFR or VoFR) enables pharmaceutical companies to streamline operations, reducing excess inventory and logistics costs.
+This project analyzes coffee shop sales patterns and customer behaviors, revealing key insights that can drive actionable business decisions. Key findings include product performance, time-based sales trends, location-specific variations, customer loyalty, and seasonal demand spikes. Recommendations are tailored to optimize the product mix, leverage weekday vs. weekend promotions, implement time-based marketing strategies, and enhance customer segmentation for personalized offerings. These strategies aim to boost sales, improve customer satisfaction, and maximize profitability.
 
 
 
