@@ -1,99 +1,82 @@
-Pharmaceutical Supply Chain Management:
+Maven Coffee Sales Analysis:
 
 **Dataset Details:**
-- 10 tables present in the dataset 
-1. Brands
-2. Calender
-3. Categories
-4. Customers
-5. Customers_Type 
-6. Products 
-7. Sales_person 
-8. Sales_team 
-9. OrdersItem
-10. Orders
+The dataset Coffee Shop Sales, contains sales transaction records from a coffee shop, with the following columns:
+1.	transaction_id: A unique identifier for each transaction.
+2.	transaction_date: The date of the transaction (spanning from January 1 to June 30, 2023).
+3.	transaction_time: The time of the transaction.
+4.	transaction_qty: The quantity of items purchased, ranging from 1 to 8.
+5.	store_id: Identifier for the store, with values from 3 to 8.
+6.	store_location: Location of the store (e.g., "Lower Manhattan," "Hell's Kitchen").
+7.	product_id: Identifier for the product.
+8.	unit_price: The price per unit of the product, ranging from $0.80 to $45.00.
+9.	product_category: The category of the product, with values like "Coffee," "Tea," and "Drinking Chocolate."
+10.	product_type: A more specific product type, such as "Gourmet brewed coffee" or "Hot chocolate."
+11.	product_detail: Detailed description of the product (e.g., "Ethiopia Rg," "Spicy Eye Opener Chai Lg").
 
 
-
+Data cleaning: 
+- Clean the data set add Create a Calender table.
+  
+<img width="233" alt="image" src="https://github.com/user-attachments/assets/d2c514b9-7143-4e30-bc23-c7ac0908d5b7">
 
 
 ### **Data Modeling:**
 
 The dataset modeling links all Sheets and Tables.
-<img width="592" alt="image" src="https://github.com/user-attachments/assets/ef8abb8d-9e90-4c52-8bd5-191e21ced99a">
+
+<img width="873" alt="image" src="https://github.com/user-attachments/assets/3bb67b67-ebba-4f86-9f42-006358f90b1a">
+
 
 
 ### **DAX Measure:**
-1. % of total order = DIVIDE(
-    [Total Order Lines], 
-    CALCULATE(
-         [Total Order Lines], REMOVEFILTERS(dimCustomers[Name])
-    )
-)
+1.Total sales = SUM(Transactions[Sales])
 
-2. IF = 
- VAR InFull = 
-    COUNTX(
-        factOrders,
-    IF(
-        factOrders[Fill rate] >= 100, 
+2. Total Quantity_sold = SUM(Transactions[transaction_qty])
+3. Total Orders = DISTINCTCOUNT(Transactions[transaction_id])
+
+4. Top_Product = 
+CALCULATE(
+    MAX('Transactions'[product_detail]),
+    TOPN(
         1,
-        BLANK()
+        SUMMARIZE(
+            'Transactions',
+            'Transactions'[product_detail],
+            "TotalSales", SUM('Transactions'[transaction_qty])
+        ),
+        [TotalSales],
+        DESC
     )
 )
 
-RETURN
-    DIVIDE(
-        InFull, [Total Order Lines]
-    )
-3. IF% = DIVIDE([Total Order Lines Fully Filled],[Total Order Lines])
 
-4. Lifr = AVERAGE(factOrders[Fill rate])
-
-5. LIFR % = DIVIDE(SUM(factOrderItems[infull]), COUNTA(factOrderItems[infull]))
-
-6.OT = 
-VAR OnTime =
-    COUNTX(
-    factOrders, 
-    IF(
-        factOrders[On Time] == "True", 
-        1, 
-        BLANK()
+5. Top_Location = 
+CALCULATE(
+    MAX('Transactions'[store_location]),
+    TOPN(
+        1,
+        SUMMARIZE(
+            'Transactions',
+            'Transactions'[store_location],
+            "TotalSales", SUM('Transactions'[transaction_qty])
+        ),
+        [TotalSales],
+        DESC
     )
 )
 
-RETURN
-    DIVIDE(
-        OnTime, [Total Order Lines]
-    )
 
-7. OT value = COUNTX(
-    factOrders, 
-    IF(
-        factOrders[On Time] == "True", 
-        1, 
-        BLANK()
-    ))
+6.PM Sales = 
+CALCULATE([CM Sales],DATEADD('Calendar Table'[Date],-1,MONTH))
 
+7. PM Quantity Orders = 
+        CALCULATE([CM quantity Orders],DATEADD('Calendar Table'[Date],-1,MONTH))
 
-8.OT% = DIVIDE([OT value],[Total Order Lines])
+8.PM Orders = 
+         CALCULATE([CM Orders],DATEADD('Calendar Table'[Date],-1,MONTH))
 
-9. OTIF = 
-VAR OnTimeInFull = 
-    COUNTX(
-    factOrders, 
-    IF(
-        factOrders[On Time] == "True" && factOrders[Fill rate] == 100, 
-        1, 
-        BLANK()
-    )
-)
-
-RETURN
-    DIVIDE(
-        OnTimeInFull, [Total Order Lines]
-    )
+9. placeholder label p_type = SELECTEDVALUE(Transactions[product_type]) & " | " & FORMAT([Total sales]/1000,"$0.00K")
 10. OTIF value = COUNTX(
     factOrders, 
     IF(
@@ -103,39 +86,98 @@ RETURN
     )
 )
 
-11. OTIF% = DIVIDE([OTIF value],[Total Order Lines])
-12.Total Order Line QTY = SUM(factOrders[Total Order Amount])
-13. Total Order Lines = COUNTROWS(factors)
+11. placeholder label location = SELECTEDVALUE(Transactions[store_location]) & " | " & FORMAT([Total sales]/1000,"$0.00K")
+12. placeholder label category = SELECTEDVALUE(Transactions[product_category]) & " | " & FORMAT([Total sales]/1000,"$0.00K")
+13. placeholder = 0
 
-14. Total Order Lines Fully Filled = COUNTX(
-    factOrders,
-    IF(
-        factOrders[Fill rate] >= 100, 
-        1,
-        BLANK()
-    ))
+14. Mom Sales and diff Sales = 
+VAR month_diff= [CM Sales]-[PM Sales]
+VAR mom= month_diff / [PM Sales]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%" & " | " & Mark & FORMAT(month_diff/1000,"0.0K"))& " " & "VS LM"  
 
-15. Total Order QTY Delivered = 
-    CALCULATE(
-        SUM(
-            'factOrderItems'[Quantity]),
-            NOT(ISBLANK('factOrderItems'[Delivery Date])
-            )
-            )
+15.Mom Qty Orders and diff qty orders = 
+VAR month_diff= [CM quantity Orders]-[PM Quantity Orders]
+VAR mom= month_diff / [PM Quantity Orders]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%" & " | " & Mark & FORMAT(month_diff/1000,"0.0K"))& " " & "VS LM"  
 
-16. VoFR % = DIVIDE(SUM(factOrderItems[delivery_quantity]), SUM(factOrderItems[Quantity]))
+16. Mom Orders and diff orders = 
+VAR month_diff= [CM Orders]-[PM Orders]
+VAR mom= month_diff / [PM Orders]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%" & " | " & Mark & FORMAT(month_diff/1000,"0.0K"))& " " & "VS LM"  
     
+17. Mom growth Sales = 
+VAR month_diff= [CM Sales]-[PM Sales]
+VAR mom= month_diff / [PM Sales]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%")
+
+18.Mom growth Orders = 
+VAR month_diff= [CM Orders]-[PM Orders]
+VAR mom= month_diff / [PM Orders]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%")
+
+19. Mom growth growth qty = 
+VAR month_diff= [CM quantity Orders]-[PM Quantity Orders]
+VAR mom= month_diff / [PM Quantity Orders]
+VAR Mark= IF(month_diff>0,"+","")
+VAR mark_term=if(month_diff>0,"◤","◢")
+RETURN
+mark_term & " " & Mark & FORMAT(mom,"#0.0%")
+
+20. Last Month sale = CALCULATE(SUM(Transactions[Sales]),SAMEPERIODLASTYEAR('Calendar Table'[Date]))
+
+21. Increase sale = [CM Sales]-[PM Sales]
+
+22. increase % = 
+[Increase sale]/([PM Sales]+[CM Sales])
+
+23. Daily average sales = AVERAGEX(ALLSELECTED(Transactions[transaction_date]),[Total sales])
+
+24. Daily average qty sold = AVERAGEX(ALLSELECTED(Transactions[transaction_date]),[Total Quantity_sold])
+
+25. Color bar for Average Sales = IF([Total sales]>[Daily average sales],"Above Average","Below Average")
+
+26. CM Sales = 
+VAR Select_month= SELECTEDVALUE('Calendar Table'[Month])
+RETURN 
+TOTALMTD(CALCULATE([Total sales],'Calendar Table'[Month]=Select_month),'Calendar Table'[Date])
+
+27. CM quantity Orders = 
+VAR Select_month= SELECTEDVALUE('Calendar Table'[Month])
+RETURN 
+TOTALMTD(CALCULATE([Total Quantity_sold],'Calendar Table'[Month]=Select_month),'Calendar Table'[Date])
+
+28. CM Orders = 
+VAR Select_month= SELECTEDVALUE('Calendar Table'[Month])
+RETURN 
+TOTALMTD(CALCULATE([Total Orders],'Calendar Table'[Month]=Select_month),'Calendar Table'[Date])
 
 
 ### **DashBoard And Visualization:**
 
-## *Orders at a glance:*
-- Location Based Order Analysis 
-- Product-based order analysis 
-- Top distributor Order analysis 
--  ‘On-time delivery (OT) %’, ‘In-full delivery (IF) %’, and OnTime in full (OTIF) %’ of the customer orders daily basis against the target service level set for each customer.
+## *Dashboard:*
+- Total sales, Total Orders, Total Quantity_sold analysis.
+- Sales trends Prediction analysis. 
+- Top Quantity analysis.
+- Location-wise analysis.
+- previous and current month sales, Orders analysis.
 
- <img width="286" alt="1 ph" src="https://github.com/user-attachments/assets/ced5a200-9bc1-4f6b-b9c5-145e0184799a">
+ <img width="671" alt="image" src="https://github.com/user-attachments/assets/3903ffeb-aa8b-4076-bab1-0f1a6aec36c0">
+
 
 
 ## *Service level analysis:*
